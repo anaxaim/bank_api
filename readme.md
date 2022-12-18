@@ -10,3 +10,8 @@
 * sqlc init
 * [config file](https://docs.sqlc.dev/en/stable/reference/config.html)
 * sqlc generate
+
+### Postgres driver - [lib/pq](https://github.com/lib/pq)
+
+# Tests
+### [testify](https://github.com/stretchr/testify)
