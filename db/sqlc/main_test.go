@@ -6,8 +6,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/anaxaim/bank_api/util"
 	_ "github.com/lib/pq"
+
+	"github.com/anaxaim/bank_api/util"
 )
 
 var testQueries *Queries

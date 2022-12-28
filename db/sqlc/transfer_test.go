@@ -4,8 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/anaxaim/bank_api/util"
 	"github.com/stretchr/testify/require"
+
+	"github.com/anaxaim/bank_api/util"
 )
 
 func createRandomTransfer(accID1, accID2 int64, t *testing.T) Transfer {
