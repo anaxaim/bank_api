@@ -4,8 +4,9 @@ import (
 	"database/sql"
 	"net/http"
 
-	db "github.com/anaxaim/bank_api/db/sqlc"
 	"github.com/gin-gonic/gin"
+
+	db "github.com/anaxaim/bank_api/db/sqlc"
 )
 
 type createAccountRequest struct {
