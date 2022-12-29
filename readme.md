@@ -13,5 +13,16 @@
 
 ### Postgres driver - [lib/pq](https://github.com/lib/pq)
 
+# Config parser
+### [viper](github.com/spf13/viper)
+
 # Tests
 ### [testify](https://github.com/stretchr/testify)
+
+# Mocks
+* [golang-mock](github.com/golang/mock)
+* mocgen CLI install *go install github.com/golang/mock/mockgen@v1.6.0*
+* generate mocks: mockgen -package name -destination path  files InterfaceName
+
+# CI
+### config for github-actions in .github/workflows
