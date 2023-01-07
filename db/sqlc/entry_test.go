@@ -4,8 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/anaxaim/bank_api/util"
 	"github.com/stretchr/testify/require"
+
+	"github.com/anaxaim/bank_api/util"
 )
 
 func createRandomEntry(accID int64, t *testing.T) Entry {

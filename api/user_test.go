@@ -11,13 +11,14 @@ import (
 	"reflect"
 	"testing"
 
-	mockdb "github.com/anaxaim/bank_api/db/mock"
-	db "github.com/anaxaim/bank_api/db/sqlc"
-	"github.com/anaxaim/bank_api/util"
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
 	"github.com/lib/pq"
 	"github.com/stretchr/testify/require"
+
+	mockdb "github.com/anaxaim/bank_api/db/mock"
+	db "github.com/anaxaim/bank_api/db/sqlc"
+	"github.com/anaxaim/bank_api/util"
 )
 
 type eqCreateUserParamsMatcher struct {
@@ -180,7 +181,7 @@ func TestCreateUserAPI(t *testing.T) {
 			store := mockdb.NewMockStore(ctrl)
 			tc.buildStubs(store)
 
-			server := NewServer(store)
+			server := newTestServer(t, store)
 			recorder := httptest.NewRecorder()
 
 			data, err := json.Marshal(tc.body)

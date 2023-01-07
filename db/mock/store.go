@@ -5,11 +5,12 @@
 package mockdb
 
 import (
-	context "context"
-	reflect "reflect"
+	"context"
+	"reflect"
+
+	"github.com/golang/mock/gomock"
 
 	db "github.com/anaxaim/bank_api/db/sqlc"
-	gomock "github.com/golang/mock/gomock"
 )
 
 // MockStore is a mock of Store interface.
