@@ -4,9 +4,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/anaxaim/bank_api/util"
 	"github.com/golang-jwt/jwt/v4"
 	"github.com/stretchr/testify/require"
+
+	"github.com/anaxaim/bank_api/util"
 )
 
 func TestJWTMaker(t *testing.T) {

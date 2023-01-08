@@ -4,8 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/anaxaim/bank_api/util"
 	"github.com/stretchr/testify/require"
+
+	"github.com/anaxaim/bank_api/util"
 )
 
 func TestPasetoMaker(t *testing.T) {
