@@ -1,7 +1,7 @@
 DB_URL=postgresql://root:secret@localhost:5432/bank?sslmode=disable
 
 postgres:
-	docker run --name postgres -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:13.9-alpine3.17
+	docker run --name postgres --network bank-network -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:13.9-alpine3.17
 
 createdb:
 	docker exec -it postgres createdb --username=root --owner=root bank
@@ -32,5 +32,14 @@ server:
 
 mock:
 	mockgen -package mockdb -destination db/mock/store.go  github.com/anaxaim/bank_api/db/sqlc Store
+
+build:
+	docker build -t bank:latest .
+
+network:
+	docker network create bank-network
+
+run:
+	docker run --name bank --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@postgres:5432/bank?sslmode=disable" bank:latest  
 
 .PHONY: postgres createdb dropdb migrateup migrateup1 migratedown migratedown1 sqlc test mock
