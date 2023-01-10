@@ -36,10 +36,13 @@ mock:
 build:
 	docker build -t bank:latest .
 
+up:
+	docker compose up
+
 network:
 	docker network create bank-network
 
 run:
-	docker run --name bank --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@postgres:5432/bank?sslmode=disable" bank:latest  
+	docker run --name bank --network bank-network -p 8881:8881 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@postgres:5432/bank?sslmode=disable" bank:latest  
 
 .PHONY: postgres createdb dropdb migrateup migrateup1 migratedown migratedown1 sqlc test mock
